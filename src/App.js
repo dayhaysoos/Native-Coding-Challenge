@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 
+// Routes
 import AppNavigator from './Routes';
 
-const View = styled.View`
-  flex: 1;
-  background-color: coral;
-`;
+// redux
+import { Provider } from 'react-redux';
+import configureStore from './redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
+
+const { store, persistor } = configureStore;
 
 
 class App extends Component {
     render() {
         return (
-            <View>
-                <AppNavigator />
-            </View>
+            <Provider store={store}>
+                <PersistGate loading={null} persistor={persistor}>
+                    <AppNavigator />
+                </PersistGate>
+            </Provider>
         );
     }
 }
