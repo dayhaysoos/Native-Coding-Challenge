@@ -11,7 +11,21 @@ const AppNavigtor = createStackNavigator({
     ManageKitties: {
         screen: ManageKitties,
     }
-});
+},
+{
+    defaultNavigationOptions: {
+        headerTitle: 'Kitty Dex',
+        headerTitleStyle: {
+            marginTop: 20,
+            color: 'white'
+        },
+        headerStyle: {
+            backgroundColor: 'coral'
+        },
+        headerTruncatedBackTitle: 'Back'
+    }
+}
+);
 
 export default createAppContainer(AppNavigtor);
 

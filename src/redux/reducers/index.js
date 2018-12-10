@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import kittyReducer from './kittyReducer';
+import kitties from './kittyReducer';
 
 const rootReducer = combineReducers({
-    kittyReducer
+    kitties
 });
 
 export default rootReducer;
